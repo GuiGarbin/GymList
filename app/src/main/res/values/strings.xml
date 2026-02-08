@@ -3,4 +3,10 @@
     <string name="intoduction">E ai, bora treinar vagabundo?\n\nTira essa bunda da frente do computador e impressione todo mundo\nJoga na cara deles o seu progresso
     </string>
     <string name="weekly_goal">Meta semanal</string>
+    <string name="add_weight">Qual o seu peso?</string>
+    <string name="add_right_arm">Qual a medida do seu braco direito?</string>
+    <string name="add_left_arm">Qual a medida do seu braco esquerdo?</string>
+    <string name="add_right_leg">Qual a medida da sua perna direito?</string>
+    <string name="add_left_leg">Qual a medida da sua perna esquerda?</string>
+    <string name="add_body_fat">Qual a poorcentagem de gorsura corporal?</string>
 </resources>

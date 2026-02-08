@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingConstraints">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Início" />
+
+    <item
+        android:id="@+id/nav_treinos"
+        android:icon="@drawable/fitness"
+        android:title="Treinos" />
+
+    <item
+        android:id="@+id/nav_progresso"
+        android:icon="@drawable/run"
+        android:title="Evolução" />
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/user"
+        android:title="Perfil" />
+
+</menu>

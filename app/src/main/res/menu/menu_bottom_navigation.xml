@@ -10,17 +10,17 @@
         android:title="Início" />
 
     <item
-        android:id="@+id/nav_treinos"
+        android:id="@+id/nav_library"
         android:icon="@drawable/fitness"
         android:title="Treinos" />
 
     <item
-        android:id="@+id/nav_progresso"
+        android:id="@+id/nav_cycle"
         android:icon="@drawable/run"
         android:title="Evolução" />
 
     <item
-        android:id="@+id/nav_perfil"
+        android:id="@+id/nav_profile"
         android:icon="@drawable/user"
         android:title="Perfil" />
 

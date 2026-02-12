@@ -12,4 +12,25 @@ public class ExerciseSet {
         this.reps = reps;
         this.done = done;
     }
+
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+    public int getNumberTime() {
+        return numberTime;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public int getReps() {
+        return reps;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
 }

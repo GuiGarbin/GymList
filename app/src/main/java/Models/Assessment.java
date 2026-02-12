@@ -30,4 +30,16 @@ public class Assessment {
         this.chest = chest;
         this.belly = belly;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getFat() {
+        return fat;
+    }
 }

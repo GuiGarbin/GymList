@@ -14,6 +14,7 @@
         tools:text="seire 1"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -24,6 +25,7 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/exercise_number_set"
         app:layout_constraintEnd_toStartOf="@id/reps_exercise_set"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -34,6 +36,7 @@
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/weight_exercise_set"
         app:layout_constraintEnd_toStartOf="@id/checkbox_exercise_set"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <CheckBox
@@ -47,6 +50,7 @@
         app:layout_constraintStart_toEndOf="@id/reps_exercise_set"
         app:layout_constraintEnd_toEndOf="parent"
         android:checked="false"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

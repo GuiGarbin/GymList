@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gymlist.R;
 
-public class ActiveSessionActivity extends AppCompatActivity {
+public class AddAssessmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_active_session);
+        setContentView(R.layout.activity_add_assessment);
     }
 }

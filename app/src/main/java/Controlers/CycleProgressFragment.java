@@ -19,4 +19,6 @@ public class CycleProgressFragment extends Fragment {
 
         return view;
     }
+
+
 }

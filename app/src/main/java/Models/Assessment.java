@@ -31,6 +31,12 @@ public class Assessment {
         this.belly = belly;
     }
 
+    public Assessment(Date date, double weight, double fat) {
+        this.date = date;
+        this.weight = weight;
+        this.fat = fat;
+    }
+
     public Date getDate() {
         return date;
     }

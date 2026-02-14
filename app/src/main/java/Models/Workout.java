@@ -10,9 +10,17 @@ public class Workout implements Serializable {
     private List<Exercise> exercisesList;
     Date dateFinished;
 
-    public Workout(String name, List<Exercise> exercisesList, String weekDay) {
+    public Workout(String name) {
         this.name = name;
-        this.exercisesList = exercisesList;
+    }
+
+    public void addExercise(Exercise exercise) {
+        this.exercisesList.add(exercise);
+    }
+
+    // Getter
+    public List<Exercise> getExercises() {
+        return exercisesList;
     }
 
     public void setDateFinished(Date dateFinished) {

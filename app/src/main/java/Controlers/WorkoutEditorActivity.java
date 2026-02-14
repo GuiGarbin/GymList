@@ -1,4 +1,6 @@
 package Controlers;
 
-public class WorkoutEditorActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class WorkoutEditorActivity extends AppCompatActivity {
 }

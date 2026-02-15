@@ -18,12 +18,12 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/name_exercise_workout_editor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/button_back_workout_editor"
-        android:text="nome do treino"
+        tools:text="nome do treino"
         android:textColor="@color/white"
         />
 

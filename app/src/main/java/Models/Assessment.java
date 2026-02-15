@@ -1,8 +1,14 @@
 package Models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
+@Entity(tableName = "assessment_table")
 
 public class Assessment {
+    @PrimaryKey(autoGenerate = true)
+    int id;
     Date date;
     double weight;
     double fat;
@@ -47,5 +53,13 @@ public class Assessment {
 
     public double getFat() {
         return fat;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

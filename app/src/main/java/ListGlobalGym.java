@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Models.Workout;
 
-public class Data {
+public class ListGlobalGym {
 
     private static List<Workout> myWorkouts = new ArrayList<>();
 

@@ -53,7 +53,7 @@
                 app:suffixText="kg">
 
                 <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputPeso"
+                android:id="@+id/inputWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal" />
@@ -72,7 +72,7 @@
                 app:suffixText="%">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputGordura"
+                    android:id="@+id/inputFat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal" />
@@ -236,6 +236,7 @@
         </GridLayout>
 
         <Button
+            android:id="@+id/button_save_assessment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salvar Avaliação"

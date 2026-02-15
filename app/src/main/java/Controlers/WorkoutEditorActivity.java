@@ -2,6 +2,7 @@ package Controlers;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
@@ -17,11 +18,14 @@ import java.util.List;
 
 import Adapters.ExerciseAdapter;
 import Models.Exercise;
+import Models.Workout;
+import dataCenter.AppDatabase;
 
 public class WorkoutEditorActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ExerciseAdapter adapter;
     private List<Exercise> exerciseList;
+    private EditText nameWorkout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +49,19 @@ public class WorkoutEditorActivity extends AppCompatActivity {
     }
 
     private void saveWorkout(){
-        String name = 
+        String nameWorkoutString = nameWorkout.getText().toString().trim();
+        if(nameWorkoutString.isEmpty()){
+            return;
+        }
+        if(exerciseList.isEmpty()){
+            return;
+        }
+        Workout newWorkout = new Workout(nameWorkoutString);
+        newWorkout.setExercisesList(exerciseList);
+
+        AppDatabase db = AppDatabase.getInstance(this);
+        db.workoutDao().insert(newWorkout);
+        finish();
     }
 
     private void initializeConfig(){
@@ -53,6 +69,7 @@ public class WorkoutEditorActivity extends AppCompatActivity {
         exerciseList = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_view_workout_editor);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        nameWorkout = findViewById(R.id.name_exercise_workout_editor);
 
         adapter = new ExerciseAdapter(this, exerciseList, position-> {
                     removeExercise(position);

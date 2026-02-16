@@ -13,12 +13,11 @@ public class WorkoutViewHolder extends RecyclerView.ViewHolder {
 
     public TextView classWorkout;
     public TextView name;
-    public ImageButton buttonDelete;
 
     public WorkoutViewHolder(@NonNull View itemView) {
         super(itemView);
         this.classWorkout = itemView.findViewById(R.id.number_class);
         this.name = itemView.findViewById(R.id.name_exercise_workout_card);
-        this.buttonDelete = itemView.findViewById(R.id.button_delete_workout);
+
     }
 }

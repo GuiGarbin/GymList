@@ -43,7 +43,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutViewHolder> {
             intent.putExtra("TREINO_EXTRA", train);
             context.startActivity(intent);
         });
-        holder.buttonDelete.setOnClickListener(v-> {
+        holder.itemView.setOnClickListener(v-> {
             int positionActual = holder.getBindingAdapterPosition();
             if(positionActual != RecyclerView.NO_POSITION){
                 listener.onRemoveClick(positionActual);

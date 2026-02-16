@@ -54,13 +54,12 @@ public class WorkoutEditorActivity extends AppCompatActivity {
             return;
         }
         if(exerciseList.isEmpty()){
-            return;
+            //return;
         }
         Workout newWorkout = new Workout(nameWorkoutString);
         newWorkout.setExercisesList(exerciseList);
 
-        AppDatabase db = AppDatabase.getInstance(this);
-        db.workoutDao().insert(newWorkout);
+        AppDatabase.getInstance(this).workoutDao().insert(newWorkout);
         finish();
     }
 

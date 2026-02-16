@@ -55,7 +55,7 @@ public class LibraryFragment extends Fragment {
         workoutList = db.workoutDao().getAll();
 
         workoutAdapter = new WorkoutAdapter(requireContext(), workoutList, position -> {
-            removeWorkout(position);
+            openWorkoutDetails(position);
         });
 
         if(recyclerViewWorkout!=null){
@@ -75,6 +75,15 @@ public class LibraryFragment extends Fragment {
             Intent intent = new Intent(getContext(), WorkoutEditorActivity.class);
             addTrainLauncher.launch(intent);
         });
+    }
+
+    private void openWorkoutDetails(int position){
+        Workout workout = workoutList.get(position);
+
+        Intent intent = new Intent(getContext(), ActiveSessionActivity.class);
+        intent.putExtra("selected_workout", workout);
+
+        startActivity(intent);
     }
 
     private void removeWorkout(int position){

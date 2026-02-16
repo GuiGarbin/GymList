@@ -54,11 +54,23 @@ public class ProfileFragment extends Fragment {
 
         assessmentAdapter = new AssessmentAdapter(requireContext(), assessmentList, position -> {
             removeAssessment(position);
-        });
+        },
+                position -> {
+            openAssessmentDetails(position);
+                });
 
         if(recyclerViewAssessment!=null){
             recyclerViewAssessment.setAdapter(assessmentAdapter);
         }
+    }
+
+    private void openAssessmentDetails(int position){
+        Assessment assessment = assessmentList.get(position);
+
+        Intent intent = new Intent(getContext(), AssessmentDetailsActivity.class);
+        intent.putExtra("selected_assessment", assessment);
+
+        startActivity(intent);
     }
 
     public void configButton(View view){

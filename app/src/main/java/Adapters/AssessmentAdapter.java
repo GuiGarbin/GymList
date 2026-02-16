@@ -21,12 +21,16 @@ import Models.Assessment;
 public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssassmentViewHolder> {
     private Context context;
     private List<Assessment> list;
-    private OnRemoveClickListener listener;
+    private OnRemoveClickListener listenerDelete;
+    private OnRemoveClickListener listenerOpen;
 
-    public AssessmentAdapter(Context context, List<Assessment> list, OnRemoveClickListener listener) {
+    public AssessmentAdapter(Context context, List<Assessment> list,
+                             OnRemoveClickListener listenerDelete,
+                            OnRemoveClickListener listenerOpen) {
         this.context = context;
         this.list = list;
-        this.listener = listener;
+        this.listenerDelete = listenerDelete;
+        this.listenerOpen = listenerOpen;
     }
 
     @NonNull
@@ -48,7 +52,13 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         holder.buttonDelete.setOnClickListener(v -> {
             int positionActual = holder.getBindingAdapterPosition();
             if(positionActual != RecyclerView.NO_POSITION){
-                listener.onRemoveClick(positionActual);
+                listenerDelete.onRemoveClick(positionActual);
+            }
+        });
+        holder.itemView.setOnClickListener(v-> {
+            int positionActual = holder.getBindingAdapterPosition();
+            if(positionActual != RecyclerView.NO_POSITION) {
+                listenerOpen.onRemoveClick(positionActual);
             }
         });
     }

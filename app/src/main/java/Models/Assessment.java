@@ -3,10 +3,11 @@ package Models;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Date;
 @Entity(tableName = "assessment_table")
 
-public class Assessment {
+public class Assessment implements Serializable {
     @PrimaryKey(autoGenerate = true)
     int id;
     Date date;

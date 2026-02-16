@@ -9,7 +9,7 @@ import androidx.room.TypeConverters;
 import Models.Assessment;
 import Models.Workout;
 
-@Database(entities = {Workout.class, Assessment.class}, version = 2)
+@Database(entities = {Workout.class, Assessment.class}, version = 2, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 

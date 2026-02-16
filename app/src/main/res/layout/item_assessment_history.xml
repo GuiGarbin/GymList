@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         tools:text="dia da avaliacao"
         android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -31,6 +32,16 @@
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/weight_avaliation"
         />
+
+    <ImageButton
+        android:id="@+id/button_delete_assessment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/delete"
+        android:background="@color/main_theme_pag"
+        android:padding="8dp"/>
 
 
 

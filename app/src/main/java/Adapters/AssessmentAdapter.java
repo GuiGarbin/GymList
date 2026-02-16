@@ -5,6 +5,7 @@ import android.view.ContentInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,10 +21,12 @@ import Models.Assessment;
 public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssassmentViewHolder> {
     private Context context;
     private List<Assessment> list;
+    private OnRemoveClickListener listener;
 
-    public AssessmentAdapter(Context context, List<Assessment> list) {
+    public AssessmentAdapter(Context context, List<Assessment> list, OnRemoveClickListener listener) {
         this.context = context;
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -39,8 +42,15 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         String date = format.format(assessment.getDate());
         holder.date.setText(date);
-        holder.weight.setText(String.valueOf(assessment.getWeight()));
-        holder.fat.setText(String.valueOf(assessment.getFat()));
+        holder.weight.setText(String.format("%.1f kg", assessment.getWeight()));
+        holder.fat.setText(String.format("%.1f%%", assessment.getFat()));
+
+        holder.buttonDelete.setOnClickListener(v -> {
+            int positionActual = holder.getBindingAdapterPosition();
+            if(positionActual != RecyclerView.NO_POSITION){
+                listener.onRemoveClick(positionActual);
+            }
+        });
     }
 
     @Override
@@ -52,12 +62,14 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         public TextView date;
         public TextView weight;
         public TextView fat;
+        public ImageButton buttonDelete;
 
         public AssassmentViewHolder(@NonNull View itemView) {
             super(itemView);
             this.date = itemView.findViewById(R.id.date_avaliation);
             this.weight = itemView.findViewById(R.id.weight_avaliation);
             this.fat = itemView.findViewById(R.id.fat_avaliation);
+            this.buttonDelete = itemView.findViewById(R.id.button_delete_assessment);
         }
     }
 }

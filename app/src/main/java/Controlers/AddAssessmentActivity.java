@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Date;
 
+import Adapters.AssessmentAdapter;
 import Models.Assessment;
 import dataCenter.AppDatabase;
 
@@ -35,7 +36,6 @@ public class AddAssessmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_assessment);
         initializeConfig();
-
     }
 
     private void initializeConfig(){
@@ -60,6 +60,7 @@ public class AddAssessmentActivity extends AppCompatActivity {
         Button ButtonSaveAssessment = findViewById(R.id.button_save_assessment);
         ButtonSaveAssessment.setOnClickListener(v-> {
             saveAssessment();
+            finish();
         });
     }
 

@@ -22,10 +22,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     private List<Exercise> exerciseList;
     private OnRemoveClickListener listener;
 
-    public interface OnRemoveClickListener {
-        void onRemoveClick(int position);
-    }
-
     public ExerciseAdapter(Context context, List<Exercise> exerciseList, OnRemoveClickListener listener) {
         this.context = context;
         this.exerciseList = exerciseList;

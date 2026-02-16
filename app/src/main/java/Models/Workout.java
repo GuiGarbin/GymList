@@ -29,7 +29,7 @@ public class Workout implements Serializable {
     }
 
     // Getter
-    public List<Exercise> getExercises() {
+    public List<Exercise> getExercisesList() {
         return exercisesList;
     }
 
@@ -51,5 +51,9 @@ public class Workout implements Serializable {
 
     public void setExercisesList(List<Exercise> exercisesList) {
         this.exercisesList = exercisesList;
+    }
+
+    public Date getDateFinished() {
+        return dateFinished;
     }
 }

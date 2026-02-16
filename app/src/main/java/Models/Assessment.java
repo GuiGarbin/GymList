@@ -37,12 +37,6 @@ public class Assessment {
         this.belly = belly;
     }
 
-    public Assessment(Date date, double weight, double fat) {
-        this.date = date;
-        this.weight = weight;
-        this.fat = fat;
-    }
-
     public Date getDate() {
         return date;
     }
@@ -61,5 +55,37 @@ public class Assessment {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public double getRightArm() {
+        return rightArm;
+    }
+
+    public double getLeftArm() {
+        return leftArm;
+    }
+
+    public double getRightLeg() {
+        return rightLeg;
+    }
+
+    public double getLeftLeg() {
+        return leftLeg;
+    }
+
+    public double getRightLowerLeg() {
+        return rightLowerLeg;
+    }
+
+    public double getLeftLowerLeg() {
+        return leftLowerLeg;
+    }
+
+    public double getChest() {
+        return chest;
+    }
+
+    public double getBelly() {
+        return belly;
     }
 }

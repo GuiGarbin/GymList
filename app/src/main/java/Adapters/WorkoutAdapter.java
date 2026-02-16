@@ -19,10 +19,12 @@ import Models.Workout;
 public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutViewHolder> {
     private Context context;
     private List<Workout> listTrain;
+    private OnRemoveClickListener listener;
 
-    public WorkoutAdapter(Context context, List<Workout> listTrain){
+    public WorkoutAdapter(Context context, List<Workout> listTrain, OnRemoveClickListener listener){
         this.context = context;
         this.listTrain = listTrain;
+        this.listener = listener;
     }
 
     @NonNull
@@ -40,6 +42,12 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutViewHolder> {
             Intent intent = new Intent(context, ActiveSessionActivity.class);
             intent.putExtra("TREINO_EXTRA", train);
             context.startActivity(intent);
+        });
+        holder.buttonDelete.setOnClickListener(v-> {
+            int positionActual = holder.getBindingAdapterPosition();
+            if(positionActual != RecyclerView.NO_POSITION){
+                listener.onRemoveClick(positionActual);
+            }
         });
     }
 

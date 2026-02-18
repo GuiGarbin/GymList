@@ -13,7 +13,7 @@ import com.example.gymlist.R;
 
 import java.util.List;
 
-import Controlers.ActiveSessionActivity;
+import Controlers.WorkoutDetailsActivity;
 import Models.Workout;
 
 public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutViewHolder> {
@@ -39,7 +39,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutViewHolder> {
         Workout train = listTrain.get(position);
         holder.name.setText(train.getName());
         holder.itemView.setOnClickListener(v-> {
-            Intent intent = new Intent(context, ActiveSessionActivity.class);
+            Intent intent = new Intent(context, WorkoutDetailsActivity.class);
             intent.putExtra("TREINO_EXTRA", train);
             context.startActivity(intent);
         });

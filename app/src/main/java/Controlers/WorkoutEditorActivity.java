@@ -44,8 +44,26 @@ public class WorkoutEditorActivity extends AppCompatActivity {
         });
         Button buttonSaveWorkout = findViewById(R.id.button_save_workout);
         buttonSaveWorkout.setOnClickListener(v-> {
-            saveWorkout();
+            if(getIntent().hasExtra("workout_edit")) {
+                buttonSaveWorkout.setText("Salvar Edicao");
+                saveEditWorkout();
+            } else {
+                saveWorkout();
+            }
         });
+    }
+
+    private void saveEditWorkout(){
+        Workout workout = (Workout) getIntent().getSerializableExtra("workout_edit");
+        if(workout!= null){
+            String nameWorkoutString = nameWorkout.getText().toString().trim();
+
+            workout.setName(nameWorkoutString);
+            workout.setExercisesList(exerciseList);
+
+            AppDatabase.getInstance(this).workoutDao().update(workout);
+        }
+        finish();
     }
 
     private void saveWorkout(){
@@ -64,17 +82,30 @@ public class WorkoutEditorActivity extends AppCompatActivity {
     }
 
     private void initializeConfig(){
-        configButton();
         exerciseList = new ArrayList<>();
+        configButton();
         recyclerView = findViewById(R.id.recycler_view_workout_editor);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         nameWorkout = findViewById(R.id.name_exercise_workout_editor);
+
+        checkEditMode();
 
         adapter = new ExerciseAdapter(this, exerciseList, position-> {
                     removeExercise(position);
                 });
 
         recyclerView.setAdapter(adapter);
+    }
+
+    private void checkEditMode(){
+        if(getIntent().hasExtra("workout_edit")){
+            Workout workout = (Workout) getIntent().getSerializableExtra("workout_edit");
+
+            if(workout != null){
+                exerciseList.addAll(workout.getExercisesList());
+                nameWorkout.setText(workout.getName());
+            }
+        }
     }
 
     private void removeExercise(int position) {

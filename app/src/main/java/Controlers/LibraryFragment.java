@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.WorkoutAdapter;
-import Models.Assessment;
 import Models.Workout;
 import dataCenter.AppDatabase;
 
@@ -80,7 +78,7 @@ public class LibraryFragment extends Fragment {
     private void openWorkoutDetails(int position){
         Workout workout = workoutList.get(position);
 
-        Intent intent = new Intent(getContext(), ActiveSessionActivity.class);
+        Intent intent = new Intent(getContext(), WorkoutDetailsActivity.class);
         intent.putExtra("selected_workout", workout);
 
         startActivity(intent);

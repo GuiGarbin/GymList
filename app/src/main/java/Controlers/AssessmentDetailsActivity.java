@@ -27,7 +27,6 @@ public class AssessmentDetailsActivity extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             txtDate.setText("Avaliação: " + sdf.format(assessment.getDate()));
 
-            // Preenche os 10 campos (Exemplos)
             setVal(R.id.detail_weight, assessment.getWeight(), "kg");
             setVal(R.id.detail_fat, assessment.getFat(), "%");
 

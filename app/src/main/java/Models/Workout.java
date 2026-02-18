@@ -56,4 +56,8 @@ public class Workout implements Serializable {
     public Date getDateFinished() {
         return dateFinished;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

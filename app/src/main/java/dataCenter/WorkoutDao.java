@@ -26,4 +26,7 @@ public interface WorkoutDao {
 
     @Query("DELETE FROM workout_table")
     void deleteAll();
+
+    @Query("SELECT * FROM workout_table WHERE id = :id")
+    Workout getWorkoutById(int id);
 }

@@ -27,4 +27,5 @@ public interface AssessmentDao {
 
     @Query("DELETE FROM assessment_table")
     void deleteAll();
+
 }

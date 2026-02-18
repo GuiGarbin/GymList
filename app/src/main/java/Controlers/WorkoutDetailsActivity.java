@@ -2,6 +2,7 @@ package Controlers;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -12,7 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gymlist.R;
 
+import java.util.List;
+
 import Adapters.ExerciseAdapter;
+import Models.Exercise;
 import Models.Workout;
 import dataCenter.AppDatabase;
 
@@ -44,7 +48,7 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
                 name.setText(newWorkout.getName());
 
                 adapter = new ExerciseAdapter(this, newWorkout.getExercisesList(), position -> {
-                });
+                }, false);
                 recyclerView.setAdapter(adapter);
 
             }
@@ -62,7 +66,7 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             adapter = new ExerciseAdapter(this, workout.getExercisesList(), position -> {
 
-            });
+            }, false);
             recyclerView.setAdapter(adapter);
         }
 
@@ -90,5 +94,6 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
             intent.putExtra("workout_edit", workout);
             startActivity(intent);
         });
+
     }
 }

@@ -92,7 +92,7 @@ public class WorkoutEditorActivity extends AppCompatActivity {
 
         adapter = new ExerciseAdapter(this, exerciseList, position-> {
                     removeExercise(position);
-                });
+                }, true);
 
         recyclerView.setAdapter(adapter);
     }

@@ -34,6 +34,8 @@ public class AddExerciseSheet extends BottomSheetDialogFragment {
         View view = inflater.inflate(R.layout.sheet_add_exercise, container, false);
 
         EditText exerciseName = view.findViewById(R.id.add_name_exercise);
+        EditText exerciseReps = view.findViewById(R.id.add_reps_exercise);
+        EditText exerciseWeight = view.findViewById(R.id.add_weight_exercise);
         Button buttonAddExercise = view.findViewById(R.id.button_save_new_exercise);
 
         buttonAddExercise.setOnClickListener(v-> {
@@ -42,7 +44,17 @@ public class AddExerciseSheet extends BottomSheetDialogFragment {
                 exerciseName.setError("digite um exercicio");
                 return;
             }
-            Exercise newExercise = new Exercise(name, 3, 10, 0);
+            int reps;
+            double weight;
+            try {
+                reps = Integer.parseInt(exerciseReps.getText().toString());
+                weight = Double.parseDouble(exerciseWeight.getText().toString());
+            } catch (Exception e) {
+                reps = 0;
+                weight = 0;
+            }
+
+            Exercise newExercise = new Exercise(name, 3, reps, weight);
 
             if(listener != null) {
                 listener.onExerciseSelected(newExercise);

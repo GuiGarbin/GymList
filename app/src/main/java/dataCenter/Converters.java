@@ -11,7 +11,7 @@ import java.util.List;
 import Models.Exercise;
 
 
-public class Converters {
+public class  Converters {
 
     @TypeConverter
     public static Date fromTimestamp(Long value) {
@@ -36,5 +36,17 @@ public class Converters {
     public static String fromList(List<Exercise> list) {
         Gson gson = new Gson();
         return gson.toJson(list);
+    }
+
+    @TypeConverter
+    public static List<Integer> fromIntString(String value) {
+        if (value == null) return Collections.emptyList();
+        Type listType = new TypeToken<List<Integer>>() {}.getType();
+        return new Gson().fromJson(value, listType);
+    }
+
+    @TypeConverter
+    public static String fromIntList(List<Integer> list) {
+        return new Gson().toJson(list);
     }
 }

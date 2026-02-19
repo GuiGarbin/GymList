@@ -31,6 +31,24 @@
         android:textColor="@color/white"
         />
 
+    <EditText
+        android:id="@+id/add_reps_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="reps"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
+
+    <EditText
+        android:id="@+id/add_weight_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="peso"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
+
     <Button
         android:id="@+id/button_save_new_exercise"
         android:layout_width="wrap_content"

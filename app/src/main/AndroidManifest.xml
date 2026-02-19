@@ -25,6 +25,7 @@
     <activity android:name="Controlers.WorkoutDetailsActivity" />
     <activity android:name="Controlers.AddAssessmentActivity" />
     <activity android:name="Controlers.AssessmentDetailsActivity"/>
+    <activity android:name="Controlers.CycleEditorActivity"/>
 
     </application>
 

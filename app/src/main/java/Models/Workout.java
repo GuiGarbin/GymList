@@ -19,6 +19,7 @@ public class Workout implements Serializable {
     @TypeConverters(Converters.class)
     private List<Exercise> exercisesList;
     Date dateFinished;
+    private int order;
 
     public Workout(String name) {
         this.name = name;
@@ -59,5 +60,13 @@ public class Workout implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 }

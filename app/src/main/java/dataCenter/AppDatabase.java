@@ -7,14 +7,16 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import Models.Assessment;
+import Models.MacroCycle;
 import Models.Workout;
 
-@Database(entities = {Workout.class, Assessment.class}, version = 2, exportSchema = false)
+@Database(entities = {Workout.class, Assessment.class, MacroCycle.class}, version = 3, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract WorkoutDao workoutDao();
     public abstract AssessmentDao assessmentDao();
+    public abstract MacroCycleDao macroCycleDao();
 
     private static AppDatabase INSTANCE;
 

@@ -3,13 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main_theme_pag">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_cycle_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_week_summary"
+        tools:listitem="@layout/item_cycle"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_add_cycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="12dp"
+        android:src="@drawable/add"
+        android:backgroundTint="@color/orange"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
